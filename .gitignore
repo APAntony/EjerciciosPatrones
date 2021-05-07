@@ -357,12 +357,13 @@ MigrationBackup/
 **/nbproject/private/
 **/nbproject/Makefile-*.mk
 **/nbproject/Package-*.bash
+**/nbproject/Package-*.xml
+**/nbproject/Package-*.properties
 build/
 nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-*.xml
-*.properties
+
 
 # End of https://www.toptal.com/developers/gitignore/api/netbeans
