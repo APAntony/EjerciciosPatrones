@@ -11,10 +11,30 @@ package Matrices;
  */
 public class EstrategiaIterativa implements EstrategiaEvaluador{
 
+    public EstrategiaIterativa() {}
+    
     @Override
     public boolean evaluarIdentidad(Matriz matriz) {
-        //To change body of generated methods, choose Tools | Templates.
-        throw new UnsupportedOperationException("Not supported yet.");
+        if (matriz.getColumnas() != matriz.getFilas())
+            return false;
+        else {
+            
+            for (int columna=0; columna<matriz.getColumnas(); columna++){
+                for (int fila=0; fila<matriz.getFilas(); fila++) {
+                    if (columna == fila) {
+                        if (matriz.getMatriz()[columna][fila] != 1)
+                            return false;
+                    }
+                    
+                    else {
+                        if (matriz.getMatriz()[columna][fila] != 0)
+                            return false;
+                    }
+                }
+            }
+            
+            return true;
+        }
     }
     
 }

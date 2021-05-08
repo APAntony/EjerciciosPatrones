@@ -14,10 +14,10 @@ public class Matriz {
     private int filas;
     private int[][] matriz;
 
-    public Matriz(int columnas, int filas) {
+    public Matriz(int columnas, int filas, int[][] matriz) {
         this.columnas = columnas;
         this.filas = filas;
-        this.matriz = new int[columnas][filas];
+        this.matriz = matriz;
     }
 
     public int getColumnas() {

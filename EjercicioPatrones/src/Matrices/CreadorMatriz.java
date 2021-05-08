@@ -25,6 +25,40 @@ public class CreadorMatriz {
     }
     
     public Matriz construirMatriz(int numCol, int numFila) {
-        return new Matriz(numCol, numFila);
+        int[][] nuevaMatriz = new int[numCol][numFila];
+        
+        if(Math.random()*10 < 6) { // Se crea una que es muy poco probable que sea identidad
+            return construirNoIdentidad(numCol, numFila);
+        } else { // Se crea una matriz asegurandose que sea identidad
+            return construirIdentidad(numCol, numFila);
+        }
+    }
+    
+    public Matriz construirIdentidad(int numCol, int numFila) {
+        int[][] matriz = new int[numCol][numFila];
+        
+        for(int col=0; col<numCol; col++) {
+            for (int fila=0; fila<numFila; fila++) {
+                if(col == fila) {
+                    matriz[col][fila] = 1;
+                } else {
+                    matriz[col][fila] = 0;
+                }
+            }
+        }
+        
+        return new Matriz(numCol, numFila, matriz);
+    }
+    
+    public Matriz construirNoIdentidad(int numCol, int numFila) {
+        int[][] matriz = new int[numCol][numFila];
+        
+        for(int col=0; col<numCol; col++) {
+            for (int fila=0; fila<numFila; fila++) {
+                matriz[col][fila] =(int) Math.floor(Math.random()*(1-0+1));
+            }
+        }
+        
+        return new Matriz(numCol, numFila, matriz);
     }
 }
