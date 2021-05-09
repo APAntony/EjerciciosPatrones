@@ -9,22 +9,27 @@ package suscripcion;
  *
  * @author Antony Artavia
  */
-public class Cliente extends Observador {
+public class Cliente extends ObservadorCliente {
     private String nombre;
     private String cedula;
     private String telefono;
     private String correo;
 
-    public Cliente(String nombre, String cedula, String telefono, String correo) {
+    public Cliente(String nombre, String cedula, String telefono, String correo, Promocion obs) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.telefono = telefono;
         this.correo = correo;
+        
+        //Enlazamos el "Subject" con el "Observador"
+        this.observable = obs;
+        this.observable.addObservador(this);
     }
     
     //Falta la implementacion
     @Override
     public void update() {
-        super.update(); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Soy en cliente "+nombre+" y veo que hay una promocion"
+                + " de "+observable.getDescuento()+"% en productos");
     }
 }

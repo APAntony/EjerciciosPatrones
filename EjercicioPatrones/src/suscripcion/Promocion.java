@@ -10,6 +10,23 @@ package suscripcion;
  * @author Antony Artavia
  */
 public class Promocion extends suscripcion.Observable {
+    private double descuento;
+
+    public Promocion() {}
     
-    //Falta implementaciones
+    @Override
+    public void notificarATodos() {
+        for (ObservadorCliente observador : observadores) {
+            observador.update();
+        }
+    }
+
+    public double getDescuento() {
+        return descuento;
+    }
+
+    public void setDescuento(double descuento) {
+        this.descuento = descuento;
+        notificarATodos();
+    }
 }

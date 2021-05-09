@@ -12,22 +12,20 @@ import java.util.ArrayList;
  * @author Antony Artavia
  */
 public abstract class Observable {
-    public ArrayList<Observador> observadores;
+    protected ArrayList<ObservadorCliente> observadores = new ArrayList<ObservadorCliente>();
 
     public Observable() {}
     
-    public void addObservador(Observador observador) {
+    public void addObservador(ObservadorCliente observador) {
         observadores.add(observador);
     }
     
-    public Observador quitObservador(Observador observador) {
+    public ObservadorCliente quitObservador(ObservadorCliente observador) {
         int index = observadores.indexOf(observador);
         
         return observadores.remove(index);
     }
     
     //Falta implementacion
-    public void notificar(String mensaje) {
-        
-    }
+    public abstract void notificarATodos();
 }

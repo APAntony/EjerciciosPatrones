@@ -9,13 +9,9 @@ package suscripcion;
  *
  * @author Antony Artavia
  */
-public abstract class Observador {
-
-    public Observador() {
-        
-    }
+public abstract class ObservadorCliente {
+    protected Promocion observable;
     
-    public void update(){
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    //Metodos
+    public abstract void update();
 }
