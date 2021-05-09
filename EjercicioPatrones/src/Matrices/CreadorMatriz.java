@@ -34,7 +34,7 @@ public class CreadorMatriz {
         }
     }
     
-    public Matriz construirIdentidad(int numCol, int numFila) {
+    private Matriz construirIdentidad(int numCol, int numFila) {
         int[][] matriz = new int[numCol][numFila];
         
         for(int col=0; col<numCol; col++) {
@@ -50,7 +50,7 @@ public class CreadorMatriz {
         return new Matriz(numCol, numFila, matriz);
     }
     
-    public Matriz construirNoIdentidad(int numCol, int numFila) {
+    private Matriz construirNoIdentidad(int numCol, int numFila) {
         int[][] matriz = new int[numCol][numFila];
         
         for(int col=0; col<numCol; col++) {

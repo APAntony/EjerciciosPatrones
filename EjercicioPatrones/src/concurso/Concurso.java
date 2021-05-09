@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author liugu
  */
-public class Concurso extends Observador{
+public class Concurso extends Observador {
     private Pregunta pregunta;
     
     public Concurso(){
