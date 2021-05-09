@@ -29,5 +29,14 @@ public class Main {
         matrices.forEach(m -> {
             System.out.println(contextoIterativo.evaluar(m));
         });
+        
+        System.out.println();
+        
+        //Contexto con la estrategia paralela
+        contextoIterativo.setEstrategia(new EstrategiaParalela());
+        
+        matrices.forEach(m -> {
+            System.out.println(contextoIterativo.evaluar(m));
+        });
     }
 }
